@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Data</title>
+</head>
+<body>
+<table border="1">
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Address</th>
+</tr></thead>
+<tbody>
+<tr th:each="emp:${xyz}">
+<td th:text="${emp.id}">Id </td>
+<td th:text="${emp.name}">name </td>
+<td th:text="${emp.address}">address</td>
+<td><a  th:href="@{'/edit/'+${emp.id}}">Update</a>
+</td>
+<td><a  th:href="@{'/delete/'+${emp.id}}">Remove</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<a href="add-data">Add</a>
+</body>
+</html>
